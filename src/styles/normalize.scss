@@ -15,3 +15,10 @@ a, button {
 ul, ol, summary {
   list-style: none;
 }
+
+.active {
+  background-color: red;
+  &__item {
+    font-size: 10000rem;
+  }
+}

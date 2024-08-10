@@ -8,10 +8,22 @@ export default defineConfig({
   base: repositoryName,
   server: { port: 8080 },
 
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          normalize: ['@styles/normalize.scss'],
+          blocks: ['@styles/blocks/_index.scss'],
+          module: ['@js/module.js'],
+        },
+      },
+    },
+  },
+
   resolve: {
     alias: {
       '@': setAlias('./src'),
-      '@components': setAlias('./src/components'),
+      '@js': setAlias('./src/js'),
       '@styles': setAlias('./src/styles'),
     },
   },
